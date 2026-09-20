@@ -6,7 +6,8 @@ from database.db import (
     save_complaint,
     save_feedback,
     get_latest_complaint_id,
-    get_complaints
+    get_complaints,
+    initialize_database
 )
 from retrieval.update_knowledge_base import add_feedback_case
 
