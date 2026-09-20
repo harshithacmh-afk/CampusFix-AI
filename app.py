@@ -10,21 +10,12 @@ from database.db import (
 )
 from retrieval.update_knowledge_base import add_feedback_case
 
-
-# ============================================================
-# PAGE CONFIGURATION
-# ============================================================
-
 st.set_page_config(
     page_title="CampusFix AI",
-    page_icon="🏫",
+    page_icon=" ",
     layout="wide"
 )
 
-
-# ============================================================
-# CUSTOM CSS
-# ============================================================
 
 st.markdown(
     """
@@ -152,12 +143,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
-# ============================================================
-# SIDEBAR
-# ============================================================
-
-st.sidebar.title("🏫 CampusFix AI")
+st.sidebar.title(" CampusFix AI")
 
 st.sidebar.write(
     "Multi-Agent Facility Decision Support System"
@@ -174,10 +160,6 @@ page = st.sidebar.radio(
 )
 
 st.sidebar.markdown("---")
-
-# ============================================================
-# USER ROLE
-# ============================================================
 
 st.sidebar.subheader("👤 User Role")
 
@@ -211,14 +193,10 @@ st.sidebar.info(
 )
 
 
-# ============================================================
-# HERO HEADER
-# ============================================================
-
 st.markdown(
     """
 <div class="hero">
-<h1>🏫 CampusFix AI</h1>
+<h1> CampusFix AI</h1>
 <p>Multi-Agent Campus Facility Decision Support System</p>
 <p>From maintenance complaints to explainable decisions.</p>
 </div>
@@ -226,10 +204,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
-# ============================================================
-# DASHBOARD
-# ============================================================
 
 if page == "📊 Dashboard":
 
@@ -255,11 +229,6 @@ if page == "📊 Dashboard":
 
     knowledge_base_count = len(knowledge_base)
 
-
-    # --------------------------------------------------------
-    # DASHBOARD METRICS
-    # --------------------------------------------------------
-
     col1, col2, col3 = st.columns(3)
 
     with col1:
@@ -280,10 +249,6 @@ if page == "📊 Dashboard":
             knowledge_base_count
         )
 
-# --------------------------------------------------------
-    # EQUIPMENT DISTRIBUTION
-    # --------------------------------------------------------
-
     st.markdown("---")
 
     st.subheader("📊 Maintenance Cases by Equipment")
@@ -302,9 +267,7 @@ if page == "📊 Dashboard":
     st.bar_chart(
         equipment_counts.set_index("Equipment")
     )
-    # --------------------------------------------------------
-    # RECENT COMPLAINTS
-    # --------------------------------------------------------
+   
 
     st.markdown("---")
 
@@ -350,10 +313,6 @@ if page == "📊 Dashboard":
         )
 
 
-    # --------------------------------------------------------
-    # DASHBOARD FOOTER
-    # --------------------------------------------------------
-
     st.markdown(
         """
 <div class="footer">
@@ -365,15 +324,9 @@ CampusFix AI • Multi-Agent Facility Decision Support
 
     st.stop()
 
-# ============================================================
-# AI PROCESSING TRACE
-# ============================================================
 
 if "processing_trace" not in st.session_state:
     st.session_state.processing_trace = []
-# ============================================================
-# DIAGNOSIS SESSION STATE
-# ============================================================
 
 if "diagnosis_result" not in st.session_state:
     st.session_state.diagnosis_result = None
@@ -382,9 +335,6 @@ if "diagnosis_result" not in st.session_state:
 if "example_complaint" not in st.session_state:
     st.session_state.example_complaint = ""
 
-# ============================================================
-# SYSTEM STATUS
-# ============================================================
 
 knowledge_base_status = pd.read_csv(
     "data/maintenance_records.csv"
@@ -402,9 +352,6 @@ with status_col2:
 
 with status_col3:
     st.success("🟢 Feedback Loop\n\nEnabled")
-# ============================================================
-# AI DECISION PIPELINE
-# ============================================================
 
 st.markdown(
     """
@@ -429,9 +376,6 @@ st.markdown(
 )
 
 
-# ============================================================
-# MAINTENANCE COMPLAINT
-# ============================================================
 
 st.subheader("💬 Maintenance Complaint")
 
@@ -441,9 +385,6 @@ st.caption(
 )
 
 
-# ============================================================
-# EXAMPLE COMPLAINT BUTTONS
-# ============================================================
 
 example_col1, example_col2, example_col3 = st.columns(3)
 
@@ -483,9 +424,6 @@ with example_col3:
         )
 
 
-# ============================================================
-# COMPLAINT TEXT BOX
-# ============================================================
 
 complaint = st.text_area(
     "Enter the maintenance complaint",
@@ -498,9 +436,7 @@ complaint = st.text_area(
 )
 
 
-# ============================================================
-# DIAGNOSE BUTTON
-# ============================================================
+
 
 if st.button(
     "🔍 Diagnose Complaint",
@@ -549,9 +485,6 @@ if st.button(
             "Please enter a maintenance complaint first."
         )
 
-# ============================================================
-# AI PROCESSING TRACE DISPLAY
-# ============================================================
 
 if st.session_state.processing_trace:
 
@@ -560,9 +493,6 @@ if st.session_state.processing_trace:
         for step in st.session_state.processing_trace:
 
             st.success(step)
-# ============================================================
-# DISPLAY DIAGNOSIS
-# ============================================================
 
 if st.session_state.diagnosis_result is not None:
 
@@ -573,9 +503,7 @@ if st.session_state.diagnosis_result is not None:
     st.subheader("🔎 AI Diagnosis")
 
 
-    # --------------------------------------------------------
-    # ROOT CAUSE AND CONFIDENCE
-    # --------------------------------------------------------
+    
 
     st.markdown(
         f"""
@@ -589,9 +517,7 @@ if st.session_state.diagnosis_result is not None:
 """,
         unsafe_allow_html=True
     )
-# --------------------------------------------------------
-    # HISTORICAL EVIDENCE
-    # --------------------------------------------------------
+
 
     st.subheader("🔎 Historical Evidence")
 
@@ -635,9 +561,7 @@ if st.session_state.diagnosis_result is not None:
             "No historical evidence was retrieved."
         )
 
-    # --------------------------------------------------------
-    # RECOMMENDED ACTION
-    # --------------------------------------------------------
+    
 
     st.subheader("🛠️ Recommended Action")
 
@@ -665,9 +589,7 @@ if st.session_state.diagnosis_result is not None:
         )
 
 
-    # --------------------------------------------------------
-    # URGENCY
-    # --------------------------------------------------------
+    
 
     st.subheader("🚨 Urgency")
 
@@ -698,9 +620,6 @@ if st.session_state.diagnosis_result is not None:
         )
 
 
-    # --------------------------------------------------------
-    # EXPLAINABLE REASONING
-    # --------------------------------------------------------
 
     st.subheader("🧠 Explainable Reasoning")
 
@@ -714,9 +633,6 @@ if st.session_state.diagnosis_result is not None:
     )
 
 
-# ============================================================
-# TECHNICIAN FEEDBACK
-# ============================================================
 
 st.markdown("---")
 
@@ -744,9 +660,6 @@ actual_cost = ""
 actual_time = ""
 
 
-# ============================================================
-# INCORRECT FEEDBACK
-# ============================================================
 
 if feedback == "Incorrect":
 
@@ -777,9 +690,7 @@ if feedback == "Incorrect":
         )
 
 
-# ============================================================
-# SUBMIT FEEDBACK
-# ============================================================
+
 
 if st.button(
     "📥 Submit Technician Feedback",
@@ -823,9 +734,7 @@ if st.button(
         )
 
 
-# ============================================================
-# FOOTER
-# ============================================================
+
 
 st.markdown(
     """

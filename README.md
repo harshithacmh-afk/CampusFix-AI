@@ -1,4 +1,4 @@
-# 🏫 CampusFix AI
+# CampusFix AI
 
 ## Multi-Agent Campus Facility Decision Support System
 
@@ -8,7 +8,7 @@ Instead of relying only on manual diagnosis, the system retrieves similar past m
 
 ---
 
-## 🎯 Problem Statement
+## Problem Statement
 
 Facility managers often diagnose equipment failures based on memory and experience. This can make diagnosis slower and inconsistent, especially when multiple maintenance complaints occur.
 
@@ -16,7 +16,7 @@ CampusFix AI addresses this problem by using historical maintenance records as a
 
 ---
 
-## 💡 Solution
+##  Solution
 
 The system follows an agentic workflow:
 
@@ -42,26 +42,26 @@ Knowledge Base Improvement
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
-* 🔎 Semantic search over historical maintenance records
-* 🧠 Similar-case retrieval using Sentence Transformers
-* ⚡ FAISS vector similarity search
-* 🤖 Multi-agent workflow using LangGraph
-* 🔧 Likely root-cause diagnosis
-* 🛠️ Recommended repair action
-* 💰 Estimated repair cost
-* ⏱️ Estimated repair time
-* 🚨 Urgency classification
-* 🧠 Plain-language reasoning explanation
-* 📊 Streamlit dashboard
-* 🗄️ SQLite complaint logging
-* 👨‍🔧 Technician feedback loop
-* 🔄 Feedback-based knowledge-base improvement
+*  Semantic search over historical maintenance records
+*  Similar-case retrieval using Sentence Transformers
+*  FAISS vector similarity search
+*  Multi-agent workflow using LangGraph
+*  Likely root-cause diagnosis
+*  Recommended repair action
+*  Estimated repair cost
+*  Estimated repair time
+*  Urgency classification
+*  Plain-language reasoning explanation
+*  Streamlit dashboard
+*  SQLite complaint logging
+*  Technician feedback loop
+*  Feedback-based knowledge-base improvement
 
 ---
 
-## 🤖 Multi-Agent Architecture
+##  Multi-Agent Architecture
 
 CampusFix AI uses multiple specialized agents:
 
@@ -87,7 +87,7 @@ Generates a plain-language explanation showing how historical evidence supports 
 
 ---
 
-## 🔄 Technician Feedback Loop
+##  Technician Feedback Loop
 
 CampusFix AI includes a continuous improvement mechanism.
 
@@ -123,7 +123,7 @@ Improved Future Retrieval
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 | Technology            | Purpose                        |
 | --------------------- | ------------------------------ |
@@ -138,7 +138,7 @@ Improved Future Retrieval
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 CampusFix-AI/
@@ -172,7 +172,7 @@ CampusFix-AI/
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 ### 1. Clone the repository
 
@@ -211,7 +211,7 @@ The application will open in the browser.
 
 ---
 
-## 🧪 Example Use Cases
+##  Example Use Cases
 
 ### AC Failure
 
@@ -239,7 +239,7 @@ The system retrieves similar elevator maintenance cases and provides an explaina
 
 ---
 
-## 📊 Dashboard
+##  Dashboard
 
 The Streamlit dashboard provides:
 
@@ -252,7 +252,7 @@ The Streamlit dashboard provides:
 
 ---
 
-## 📈 Evaluation Areas
+##  Evaluation Areas
 
 The system can be evaluated based on:
 
@@ -266,7 +266,7 @@ The system can be evaluated based on:
 
 ---
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 Potential future improvements include:
 
@@ -282,7 +282,7 @@ Potential future improvements include:
 
 ---
 
-## 👥 Project
+##  Project
 
 **CampusFix AI — Multi-Agent Campus Facility Decision Support System**
 
